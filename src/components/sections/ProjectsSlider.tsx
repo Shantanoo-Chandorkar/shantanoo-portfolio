@@ -140,8 +140,8 @@ export function ProjectsSlider({ currentIndex, onChange }: ProjectsSliderProps) 
                                         key={f}
                                         className="text-xs px-2 py-0.5 border"
                                         style={{
-                                            borderColor: 'var(--accent-2)',
-                                            color: 'var(--accent-2)',
+                                            borderColor: isWin98 ? 'var(--accent)' : 'var(--accent-2)',
+                                            color: isWin98 ? 'var(--accent)' : 'var(--accent-2)',
                                             fontFamily: 'var(--font-mono)',
                                             borderRadius: 'var(--radius)',
                                         }}
@@ -160,7 +160,7 @@ export function ProjectsSlider({ currentIndex, onChange }: ProjectsSliderProps) 
                                     className="text-xs px-2 py-0.5 border"
                                     style={{
                                         borderColor: 'var(--border)',
-                                        color: 'var(--fg-muted)',
+                                        color: 'var(--accent-2)',
                                         fontFamily: 'var(--font-mono)',
                                         borderRadius: 'var(--radius)',
                                         background: 'var(--bg)',
