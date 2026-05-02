@@ -1,26 +1,229 @@
 @import "tailwindcss";
 
+/* ─── Base token defaults (Terminal theme) ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --bg: #000000;
+    --fg: #33ff00;
+    --fg-muted: #1a8c00;
+    --accent: #33ff00;
+    --accent-2: #00ff99;
+    --border: #1a8c00;
+    --card-bg: #0a0a0a;
+    --radius: 0px;
+    --glow: 0 0 8px #33ff00, 0 0 20px #33ff0055;
+    --font-mono: var(--font-ibm-plex-mono), 'Courier New', monospace;
+    --font-display: var(--font-vt323), monospace;
+    --font-body: var(--font-ibm-plex-mono), monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Terminal theme ─── */
+[data-theme="terminal"] {
+    --bg: #000000;
+    --fg: #33ff00;
+    --fg-muted: #1a8c00;
+    --accent: #33ff00;
+    --accent-2: #00ff99;
+    --border: #1a8c00;
+    --card-bg: #050505;
+    --radius: 0px;
+    --glow: 0 0 8px #33ff00, 0 0 20px #33ff0055;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Synthwave theme ─── */
+[data-theme="synthwave"] {
+    --bg: #0d0221;
+    --fg: #f0e6ff;
+    --fg-muted: #a78bc4;
+    --accent: #ff2d78;
+    --accent-2: #00e5ff;
+    --border: #6b21a8;
+    --card-bg: #1a0533;
+    --radius: 4px;
+    --glow: 0 0 10px #ff2d78, 0 0 30px #ff2d7855;
 }
 
+/* ─── Win98 theme ─── */
+[data-theme="win98"] {
+    --bg: #008080;
+    --fg: #000000;
+    --fg-muted: #444444;
+    --accent: #000080;
+    --accent-2: #ffffff;
+    --border: #808080;
+    --card-bg: #d4d0c8;
+    --radius: 0px;
+    --glow: none;
+}
+
+/* ─── Newspaper theme ─── */
+[data-theme="newspaper"] {
+    --bg: #f5f0e8;
+    --fg: #1a1a1a;
+    --fg-muted: #555555;
+    --accent: #8b1a1a;
+    --accent-2: #2c2c2c;
+    --border: #ccbfa0;
+    --card-bg: #ffffff;
+    --radius: 2px;
+    --glow: none;
+}
+
+/* ─── Global base ─── */
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* ─── Scanlines (Terminal) ─── */
+.scanlines::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 2px,
+        rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ─── Neon glow (Synthwave) ─── */
+.neon-glow {
+    text-shadow: var(--glow);
+}
+
+.neon-border {
+    box-shadow: 0 0 0 1px var(--accent), 0 0 10px var(--accent), 0 0 20px color-mix(in srgb, var(--accent) 33%, transparent);
+}
+
+/* ─── Win98 chrome ─── */
+.win-chrome {
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    background: var(--card-bg);
+}
+
+.win-titlebar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: #ffffff;
+    font-size: 11px;
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    gap: 4px;
+}
+
+.win-titlebar-dots {
+    display: flex;
+    gap: 2px;
+    margin-left: auto;
+}
+
+/* Win98 interactive button — used on CTAs, nav items, chips, etc. */
+.win-btn {
+    background: var(--card-bg);
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    padding: 2px 8px;
+    min-height: 22px;
+    font-size: inherit;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.win-btn:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+/* Tiny titlebar control dots only (×, □, _) */
+.win-titlebar-dots .win-btn {
+    width: 16px;
+    height: 14px;
+    padding: 0;
+    font-size: 9px;
+    line-height: 1;
+    min-height: unset;
+}
+
+/* ─── Halftone (Newspaper) ─── */
+.halftone::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+    background-size: 8px 8px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ─── Cursor blink ─── */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+}
+
+/* ─── Synthwave horizon grid ─── */
+.synthwave-grid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background-image:
+        linear-gradient(transparent 0%, rgba(255,45,120,0.15) 100%),
+        repeating-linear-gradient(90deg, rgba(255,45,120,0.2) 0px, transparent 1px, transparent 60px, rgba(255,45,120,0.2) 61px),
+        repeating-linear-gradient(0deg, rgba(255,45,120,0.2) 0px, transparent 1px, transparent 40px, rgba(255,45,120,0.2) 41px);
+    transform: perspective(200px) rotateX(45deg);
+    transform-origin: bottom center;
+    pointer-events: none;
+}
+
+/* ─── Section transition ─── */
+.section-enter {
+    opacity: 0;
+    transform: scale(0.98);
+}
+
+.section-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 250ms ease, transform 250ms ease;
 }
