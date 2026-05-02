@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shantanoo Chandorkar - Portfolio
 
-## Getting Started
+**Author:** Shantanoo Chandorkar
 
-First, run the development server:
+---
+
+Personal portfolio built with Next.js 16, TypeScript, and Tailwind CSS v4. Showcases projects, work experience, and tech skills through a multi-section single-page layout with four distinct visual themes.
+
+## What It Offers
+
+- **Hero** - name, tagline, bio, CTAs to projects and contact
+- **Experience** - timeline of professional roles with slider view
+- **Projects** - 7 projects with descriptions, features, tech stack, GitHub/live links
+- **Tech Stack** - compact 4-group view and full 11-category breakdown
+- **Contact** - email, location, social links (GitHub, LinkedIn, LeetCode, HackerRank, GeeksForGeeks), and a contact form powered by Resend
+
+## Theme System
+
+4 themes selectable via navbar dropdown:
+
+- **Terminal** - green-on-black, pixel font aesthetic
+- **Synthwave** - neon pink and cyan on dark purple
+- **Win98** - Windows 95 visual style
+- **Newspaper** - serif print style on warm off-white
+
+## Interactions
+
+- Keyboard arrow navigation for sliders
+- Touch swipe support for sliders
+- Smooth section transitions (fade + scale)
+- Fixed resume download button
+
+## Tech Stack
+
+- Next.js 16.2.4 (App Router)
+- TypeScript
+- Tailwind CSS v4 (CSS-first, no config file)
+- react-icons, clsx, class-variance-authority
+- Resend (contact form email delivery)
+- In-memory IP rate limiting (5 req/min) on contact API
+
+## Local Development
 
 ```bash
+npm install
+# create .env.local and set the required environment variables (see below)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Variable | Required | Description |
+|---|---|---|
+| `RESEND_API_KEY` | Yes | Resend API key for contact form email |
+| `CONTACT_EMAIL` | Yes | Email address that receives contact form submissions |
+| `RESEND_FROM_EMAIL` | No | Sender address (defaults to `onboarding@resend.dev`) |
