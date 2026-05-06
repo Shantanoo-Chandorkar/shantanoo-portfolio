@@ -110,7 +110,7 @@ export function ExperienceSlider({ currentIndex, onChange }: ExperienceSliderPro
                         </div>
                     )}
                     <div
-                        className="p-4 md:p-6 h-full"
+                        className="p-4 pb-20 md:p-6"
                         style={{ background: 'var(--card-bg)' }}
                     >
                         {/* Header */}

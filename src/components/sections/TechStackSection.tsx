@@ -25,7 +25,7 @@ export function TechStackSection() {
     return (
         <div
             className={clsx(
-                'h-full overflow-y-auto px-4 md:px-8 py-6',
+                'h-full overflow-y-auto px-4 md:px-8 pt-6 pb-20 md:py-6',
                 isTerminal && 'scanlines'
             )}
             style={{ background: 'var(--bg)' }}

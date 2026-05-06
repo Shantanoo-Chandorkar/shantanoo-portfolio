@@ -55,7 +55,7 @@ export function ProjectsSection() {
     return (
         <div
             className={clsx(
-                'h-full flex flex-col overflow-hidden px-4 md:px-8 py-6',
+                'h-full flex flex-col overflow-hidden px-4 md:px-8 pt-6 pb-20 md:py-6',
                 isTerminal && 'scanlines'
             )}
             style={{ background: 'var(--bg)' }}
@@ -82,7 +82,7 @@ export function ProjectsSection() {
 
             {/* Project cards grid */}
             <div className="flex-1 min-h-0 overflow-y-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-20 md:pb-4">
                     {projects.slice(0, 3).map((project, i) => (
                         <div
                             key={project.id}

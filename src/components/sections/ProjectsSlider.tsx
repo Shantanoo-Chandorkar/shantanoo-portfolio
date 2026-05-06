@@ -117,7 +117,7 @@ export function ProjectsSlider({ currentIndex, onChange }: ProjectsSliderProps) 
                             </div>
                         </div>
                     )}
-                    <div className="p-4 md:p-6" style={{ background: 'var(--card-bg)' }}>
+                    <div className="p-4 pb-20 md:p-6" style={{ background: 'var(--card-bg)' }}>
                         <h2
                             className={clsx('text-xl font-bold mb-1', isSynthwave && 'neon-glow')}
                             style={{ fontFamily: 'var(--font-display)', color: 'var(--fg)' }}
