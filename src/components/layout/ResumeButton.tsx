@@ -20,7 +20,7 @@ export function ResumeButton() {
             href="/Shantanoo_Chandorkar_Resume.pdf"
             download
             className={clsx(
-                'fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2 text-sm font-mono transition-all',
+                'fixed bottom-6 right-6 z-50 flex items-center gap-2 px-3 py-2 md:px-4 text-sm font-mono transition-all',
                 isWin98 ? 'win-btn' : 'border border-[var(--accent)]',
                 isSynthwave && 'neon-border',
                 isNewspaper && 'border-2 border-[var(--accent)]'
@@ -39,7 +39,7 @@ export function ResumeButton() {
             {isNewspaper && <span>✦</span>}
             {isSynthwave && <span>↓</span>}
 
-            <span>
+            <span className="hidden md:inline">
                 {isTerminal ? 'Resume.txt' : isWin98 ? 'Resume' : isNewspaper ? 'Résumé' : 'Resume'}
             </span>
         </a>
