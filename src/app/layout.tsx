@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import {
     IBM_Plex_Mono,
     VT323,
@@ -83,9 +84,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en" className={`${fontVars} h-full`} suppressHydrationWarning>
             <body className="h-full overflow-hidden">
                 <ThemeProvider>
-                    <SectionProvider>
-                        {children}
-                    </SectionProvider>
+                    <Suspense fallback={null}>
+                        <SectionProvider>
+                            {children}
+                        </SectionProvider>
+                    </Suspense>
                 </ThemeProvider>
             </body>
         </html>
