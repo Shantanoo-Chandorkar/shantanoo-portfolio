@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { useTheme } from '@/context/ThemeContext';
 import { useSection } from '@/context/SectionContext';
 import { ProjectsSlider } from './ProjectsSlider';
+import { ImageWithSkeleton } from '@/components/shared/ImageWithSkeleton';
 import { projects } from '@/data/projects';
 import { clsx } from 'clsx';
 
@@ -104,15 +104,12 @@ export function ProjectsSection() {
 
                             {/* Thumbnail */}
                             <div className="relative h-[15rem] overflow-hidden shrink-0">
-                                <Image
+                                <ImageWithSkeleton
                                     src={project.image}
                                     alt={`${project.title} thumbnail`}
                                     fill
                                     className="object-cover object-top"
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                    onError={(e) => {
-                                        (e.target as HTMLImageElement).src = '/placeholder.svg';
-                                    }}
                                 />
                                 {project?.inProgress && (
                                     <div

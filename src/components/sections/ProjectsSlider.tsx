@@ -1,9 +1,9 @@
 'use client';
 
 import { useRef } from 'react';
-import Image from 'next/image';
 import { useTheme } from '@/context/ThemeContext';
 import { SliderControls } from '@/components/shared/SliderControls';
+import { ImageWithSkeleton } from '@/components/shared/ImageWithSkeleton';
 import { useKeyboardNav } from '@/hooks/useKeyboardNav';
 import { useSwipe } from '@/hooks/useSwipe';
 import { projects } from '@/data/projects';
@@ -72,15 +72,12 @@ export function ProjectsSlider({ currentIndex, onChange }: ProjectsSliderProps) 
                         </div>
                     )}
                     <div className="relative flex-1 min-h-0" style={{ minHeight: '180px' }}>
-                        <Image
+                        <ImageWithSkeleton
                             src={project.image}
                             alt={`${project.title} screenshot`}
                             fill
                             className="object-cover object-top"
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            onError={(e) => {
-                                (e.target as HTMLImageElement).src = '/placeholder.svg';
-                            }}
                         />
                         {project?.inProgress && (
                             <div
