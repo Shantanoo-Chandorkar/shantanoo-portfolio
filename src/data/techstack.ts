@@ -10,7 +10,7 @@ export const techStackCompact: TechGroup[] = [
         items: [
             { name: 'JavaScript (ES6+)', note: 'Primary language' },
             { name: 'TypeScript', note: 'Strong typing' },
-            { name: 'PHP', note: 'Backend & WordPress' },
+            { name: 'PHP', note: 'Backend & plugins' },
             { name: 'C#', note: '.NET ecosystem' },
         ],
     },
@@ -28,17 +28,17 @@ export const techStackCompact: TechGroup[] = [
         items: [
             { name: 'Node.js', note: 'Server-side JS' },
             { name: '.NET Framework', note: 'C# applications' },
-            { name: 'MySQL', note: 'Relational DB' },
-            { name: 'MongoDB', note: 'Document DB' },
+            { name: 'REST APIs', note: 'HTTP integration' },
+            { name: 'OAuth 2.0', note: 'Auth protocol' },
         ],
     },
     {
-        label: 'Ecosystem',
+        label: 'Databases',
         items: [
-            { name: 'WordPress', note: 'CMS & plugins' },
-            { name: 'WooCommerce', note: 'E-commerce' },
-            { name: 'Docker', note: 'Containerization' },
-            { name: 'REST APIs', note: 'HTTP integration' },
+            { name: 'MySQL', note: 'Relational DB' },
+            { name: 'PostgreSQL', note: 'Advanced relational' },
+            { name: 'MongoDB', note: 'Document DB' },
+            { name: 'Redis', note: 'In-memory cache' },
         ],
     },
 ];
@@ -50,31 +50,31 @@ export const techStackCompact: TechGroup[] = [
 export const techStackFull: FullTechCategory[] = [
     {
         title: 'Frontend Development',
-        description: 'React.js, Next.js, TypeScript, JavaScript, jQuery',
+        description: 'React.js, Next.js, TypeScript, JavaScript, Tailwind CSS, ReactFlow',
     },
     {
         title: 'Backend Development',
-        description: 'PHP, Node.js, .NET Framework',
+        description: 'PHP, Node.js, .NET Framework, REST APIs, GraphQL, OAuth 2.0',
     },
     {
-        title: 'Database Management',
-        description: 'MySQL, MS-SQL, MongoDB',
+        title: 'Databases',
+        description: 'MySQL, PostgreSQL, MongoDB, Redis',
     },
     {
         title: 'Programming Languages',
-        description: 'JavaScript (ES6+), PHP, C#, TypeScript, C++, Java, Go',
+        description: 'JavaScript (ES6+), TypeScript, PHP, C#',
     },
     {
-        title: 'Core Concepts',
-        description: 'Data Structures & Algorithms, Technical SEO, System Design, Database Management',
+        title: 'Testing',
+        description: 'PHPUnit, Playwright, Vitest, React Testing Library, PHPCS',
     },
     {
-        title: 'Web Technologies',
-        description: 'REST APIs, GraphQL, WordPress, WooCommerce, Magento',
+        title: 'Security',
+        description: 'OAuth 2.0, Row-Level Security, XSS Prevention, CSRF Prevention, Email Enumeration Prevents, RBAC, CVSS Auditing, Brute-Force Protection',
     },
     {
         title: 'Performance',
-        description: 'Core Web Vitals, Technical SEO, Lighthouse, Accessibility',
+        description: 'Core Web Vitals, Lighthouse, Accessibility, Lazy Loading, Profiling, Asynchronous Execution',
     },
     {
         title: 'Development Tools',
@@ -82,14 +82,14 @@ export const techStackFull: FullTechCategory[] = [
     },
     {
         title: 'Version Control',
-        description: 'Git, GitHub, Bitbucket, SVN',
+        description: 'Git, GitHub',
     },
     {
-        title: 'Programming Tools',
-        description: 'Webpack, ESLint, Babel, Grunt, PhpCodeSniffer',
+        title: 'Build Tools',
+        description: 'Vite, Webpack, ESLint, Babel, PhpCodeSniffer',
     },
     {
-        title: 'WordPress Plugins',
-        description: 'WooCommerce, WPForms, Yoast SEO, Advanced Custom Fields, Elementor',
+        title: 'WordPress Ecosystem',
+        description: 'WordPress, WooCommerce, WordPress Hooks, Custom DB Tables, REST API Extensions',
     },
 ];

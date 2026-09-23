@@ -82,7 +82,7 @@ export function ProjectsSlider({ currentIndex, onChange }: ProjectsSliderProps) 
                                 (e.target as HTMLImageElement).src = '/placeholder.svg';
                             }}
                         />
-                        {project.inProgress && (
+                        {project?.inProgress && (
                             <div
                                 className="absolute top-2 left-2 text-xs px-2 py-0.5 border"
                                 style={{
